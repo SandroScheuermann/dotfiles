@@ -1,0 +1,18 @@
+{
+  "label" : "lock",
+  "action" : "powerprofilesctl set power-saver; pkill wlogout",
+  "text" : "Power Saver",
+  "keybind" : "p"
+}
+{
+  "label" : "logout",
+  "action" : "powerprofilesctl set balanced; pkill wlogout",
+  "text" : "Balanced",
+  "keybind" : "b"
+}
+{
+  "label" : "reboot",
+  "action" : "powerprofilesctl set performance; pkill wlogout",
+  "text" : "Performance",
+  "keybind" : "f"
+}
