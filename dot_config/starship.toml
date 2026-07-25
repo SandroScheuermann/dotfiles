@@ -1,0 +1,38 @@
+format = "$directory$git_branch$git_status$character"
+right_format = "$cmd_duration"
+add_newline = true
+palette = "glass"
+
+[palettes.glass]
+blue = "#589df6"
+cyan = "#6ee7ff"
+green = "#40efa9"
+yellow = "#f4c56a"
+red = "#ff6b7a"
+muted = "#8d9ab8"
+white = "#f7faff"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style) "
+
+[git_branch]
+style = "cyan"
+format = "[$symbol$branch]($style) "
+symbol = " "
+
+[git_status]
+style = "yellow"
+format = "([$all_status$ahead_behind]($style) )"
+
+[cmd_duration]
+style = "muted"
+format = "[$duration]($style)"
+min_time = 1000
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](blue)"

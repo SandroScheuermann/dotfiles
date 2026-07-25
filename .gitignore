@@ -1,0 +1,24 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Local editor/project metadata
+.idea/
+.vscode/
+
+# Never commit local secrets or machine state here
+secrets/
+private/
+*.key
+*.pem
+*.p12
+*.pfx
+*.kdbx
+
+# Heavy or generated files
+node_modules/
+.cache/
+cache/
+tmp/
+*.log

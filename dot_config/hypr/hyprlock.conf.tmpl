@@ -1,0 +1,79 @@
+general {
+    hide_cursor = true
+}
+
+auth {
+    fingerprint {
+        enabled = true
+        ready_message = Touch fingerprint to unlock
+        present_message = Scanning fingerprint...
+        retry_delay = 250
+    }
+}
+
+background {
+    monitor =
+    path = {{ .chezmoi.homeDir }}/Downloads/1397497.jpg
+    blur_passes = 2
+    blur_size = 4
+    noise = 0.0117
+    contrast = 1.0
+    brightness = 0.72
+    vibrancy = 0.16
+    vibrancy_darkness = 0.0
+}
+
+label {
+    monitor =
+    text = cmd[update:1000] date +"%H:%M"
+    color = rgba(247, 250, 255, 1.0)
+    font_size = 78
+    font_family = JetBrainsMono Nerd Font Propo
+    position = 0, 92
+    halign = center
+    valign = center
+}
+
+label {
+    monitor =
+    text = cmd[update:60000] env LC_TIME=C date +"%A, %B %d"
+    color = rgba(247, 250, 255, 0.72)
+    font_size = 16
+    font_family = JetBrainsMono Nerd Font Propo
+    position = 0, 34
+    halign = center
+    valign = center
+}
+
+label {
+    monitor =
+    text = $FPRINTPROMPT $FPRINTFAIL
+    color = rgba(247, 250, 255, 0.78)
+    font_size = 14
+    font_family = JetBrainsMono Nerd Font Propo
+    position = 0, -18
+    halign = center
+    valign = center
+}
+
+input-field {
+    monitor =
+    size = 320, 58
+    outline_thickness = 1
+    dots_size = 0.22
+    dots_spacing = 0.28
+    dots_center = true
+    outer_color = rgba(88, 157, 246, 0.48)
+    inner_color = rgba(0, 8, 28, 0.42)
+    font_color = rgba(247, 250, 255, 0.96)
+    fade_on_empty = false
+    placeholder_text = <i>Touch fingerprint or type password</i>
+    hide_input = false
+    check_color = rgba(88, 157, 246, 0.72)
+    fail_color = rgba(255, 107, 122, 0.84)
+    fail_text = <i>Try again</i>
+    capslock_color = rgba(244, 197, 106, 0.84)
+    position = 0, -74
+    halign = center
+    valign = center
+}

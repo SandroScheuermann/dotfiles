@@ -1,0 +1,26 @@
+[mgr]
+ratio = [1, 1, 2]
+
+[opener]
+edit = [
+  { run = 'nvim "$@"', block = true, for = "unix" },
+]
+
+[open]
+prepend_rules = [
+  { mime = "text/*", use = "edit" },
+  { mime = "application/json", use = "edit" },
+  { mime = "application/javascript", use = "edit" },
+  { mime = "application/x-shellscript", use = "edit" },
+  { mime = "inode/x-empty", use = "edit" },
+]
+
+[preview]
+image_filter = "lanczos3"
+image_quality = 90
+sixel_fraction = 15
+
+[plugin]
+prepend_previewers = [
+  { mime = "image/*", run = "image" },
+]
