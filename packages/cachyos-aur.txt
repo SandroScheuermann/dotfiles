@@ -1,0 +1,4 @@
+# Install only if these services/apps are needed on the new machine.
+android-studio
+slack-desktop-wayland
+twingate

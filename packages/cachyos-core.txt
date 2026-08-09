@@ -1,0 +1,58 @@
+# Base system and chezmoi
+base
+base-devel
+git
+chezmoi
+paru
+sudo
+
+# Session and Hyprland desktop
+sddm
+hyprland
+hypridle
+hyprlock
+hyprpaper
+hyprlauncher
+hyprshot
+hyprsunset
+waybar
+swaync
+wlogout
+wofi
+kitty
+yazi
+uwsm
+xdg-desktop-portal-hyprland
+xorg-xwayland
+polkit-kde-agent
+
+# Audio, notifications, power and clipboard
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+libnotify
+wl-clipboard
+cliphist
+playerctl
+brightnessctl
+power-profiles-daemon
+pavucontrol
+
+# Network
+networkmanager
+
+# Fonts, icons and appearance
+ttf-jetbrains-mono-nerd
+noto-fonts
+noto-fonts-emoji
+papirus-icon-theme
+qt6ct
+
+# Shell and terminal tools
+fish
+starship
+zoxide
+neovim
+btop
+fastfetch

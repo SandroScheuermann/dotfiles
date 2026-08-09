@@ -1,11 +1,13 @@
-width=520
-height=420
+width=440
+height=300
 location=center
 show=drun
 prompt=Search
 filter_rate=100
 allow_markup=true
+allow_images=true
+image_size=24
 insensitive=true
 hide_scroll=true
 matching=fuzzy
-term=alacritty
+term=kitty

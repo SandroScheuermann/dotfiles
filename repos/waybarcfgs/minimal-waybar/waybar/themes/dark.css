@@ -13,6 +13,6 @@
 @define-color workspace_active rgba(0, 0, 0, 0.4);
 @define-color workspace_hover rgba(255, 255, 255, 0.1);
 
-@define-color urgent rgba(0, 153, 255, 1);
-@define-color active rgba(88, 157, 246, 1);
-@define-color good rgba(64, 239, 169, 1);
+@define-color urgent rgba(255, 255, 255, 0.92);
+@define-color active rgba(255, 255, 255, 0.92);
+@define-color good rgba(255, 255, 255, 0.78);

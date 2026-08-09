@@ -2,6 +2,7 @@ general {
     hide_cursor = true
 }
 
+{{ if lookPath "fprintd-list" }}
 auth {
     fingerprint {
         enabled = true
@@ -10,10 +11,11 @@ auth {
         retry_delay = 250
     }
 }
+{{ end }}
 
 background {
     monitor =
-    path = {{ .chezmoi.homeDir }}/Downloads/1397497.jpg
+    path = {{ .chezmoi.homeDir }}/.config/hypr/wallpapers/wallpaper.jpg
     blur_passes = 2
     blur_size = 4
     noise = 0.0117
@@ -63,16 +65,16 @@ input-field {
     dots_size = 0.22
     dots_spacing = 0.28
     dots_center = true
-    outer_color = rgba(88, 157, 246, 0.48)
-    inner_color = rgba(0, 8, 28, 0.42)
-    font_color = rgba(247, 250, 255, 0.96)
+    outer_color = rgba(255, 255, 255, 0.48)
+    inner_color = rgba(8, 8, 10, 0.42)
+    font_color = rgba(242, 242, 242, 0.96)
     fade_on_empty = false
     placeholder_text = <i>Touch fingerprint or type password</i>
     hide_input = false
-    check_color = rgba(88, 157, 246, 0.72)
-    fail_color = rgba(255, 107, 122, 0.84)
+    check_color = rgba(255, 255, 255, 0.72)
+    fail_color = rgba(255, 255, 255, 0.84)
     fail_text = <i>Try again</i>
-    capslock_color = rgba(244, 197, 106, 0.84)
+    capslock_color = rgba(210, 210, 210, 0.84)
     position = 0, -74
     halign = center
     valign = center

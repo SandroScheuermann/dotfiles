@@ -1,18 +1,18 @@
-@define-color fg rgba(255, 255, 255, 1);
-@define-color fg_alt rgba(255, 255, 255, 1);
-@define-color fg_soft rgba(255, 255, 255, 0.6);
+@define-color fg #e8e8ea;
+@define-color fg_alt #f4f4f5;
+@define-color fg_soft #9a9ca2;
 
-@define-color bg transparent;
-@define-color bg_alt rgba(0, 8, 28, 0.42);
-@define-color bg_soft rgba(14, 25, 51, 0.36);
+@define-color bg #18191c;
+@define-color bg_alt #222328;
+@define-color bg_soft #2d2f34;
 
-@define-color tooltip_bg rgba(0, 8, 28, 0.72);
-@define-color hover rgba(255, 255, 255, 0.12);
+@define-color tooltip_bg #222328;
+@define-color hover #2d2f34;
 
-@define-color workspace_inactive rgba(255, 255, 255, 0.4);
-@define-color workspace_active rgba(88, 157, 246, 0.28);
-@define-color workspace_hover rgba(255, 255, 255, 0.1);
+@define-color workspace_inactive #7c7d82;
+@define-color workspace_active #3a3b40;
+@define-color workspace_hover #2d2f34;
 
-@define-color urgent rgba(0, 153, 255, 1);
-@define-color active rgba(88, 157, 246, 1);
-@define-color good rgba(64, 239, 169, 1);
+@define-color urgent #c4c4c8;
+@define-color active #d4d4d6;
+@define-color good #b0b1b6;

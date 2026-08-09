@@ -5,7 +5,7 @@
   box-shadow: none;
   font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans", sans-serif;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  font-size: 11px;
+  font-size: 10px;
   min-height: 0;
 }
 
@@ -15,12 +15,17 @@ window#waybar {
 }
 
 window#waybar > box {
-  margin: 5px 8px 0px 8px;
+  margin: 8px 12px 0px 12px;
+  padding: 4px 6px;
+  background: #18191c;
+  border: 1px solid #34363c;
+  border-radius: 18px;
+  box-shadow: none;
 }
 
 tooltip {
   background: @tooltip_bg;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #34363c;
   border-radius: 14px;
 }
 
@@ -45,24 +50,24 @@ tooltip label {
 #backlight,
 #pulseaudio,
 #clock {
-  background: @bg_alt;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 999px;
   color: @fg;
-  margin: 0 3px;
-  padding: 0 10px;
+  margin: 0 2px;
+  padding: 0 7px;
 }
 
 #custom-logo {
   color: @active;
   font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 12px;
-  padding: 0 12px;
+  font-size: 11px;
+  padding: 0 10px;
 }
 
 #language {
   color: @fg_soft;
-  padding: 0 8px;
+  padding: 0 6px;
 }
 
 #window {
@@ -88,13 +93,14 @@ window#waybar.empty #window {
   background: transparent;
   border-radius: 999px;
   color: @workspace_inactive;
-  margin: 3px 1px;
-  padding: 0 6px;
+  margin: 2px 1px;
+  padding: 0 5px;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
   background: @workspace_active;
+  border: 1px solid #4a4c52;
   color: @fg_alt;
 }
 
@@ -135,11 +141,11 @@ window#waybar.empty #window {
 }
 
 #battery.warning:not(.charging) {
-  color: #f4c56a;
+  color: #9a9ca2;
 }
 
 #battery.critical:not(.charging) {
-  color: #ff6b7a;
+  color: #ffffff;
 }
 
 #custom-power-saver,
@@ -152,7 +158,9 @@ window#waybar.empty #window {
 #custom-power-saver.active,
 #custom-power-balanced.active,
 #custom-power-performance.active {
-  color: @active;
+  background: #2d2f34;
+  border-color: #5a5c63;
+  color: #f2f2f2;
 }
 
 #tray {
@@ -165,11 +173,11 @@ window#waybar.empty #window {
 }
 
 #pulseaudio.muted {
-  color: #ff6b7a;
+  color: #ffffff;
 }
 
 #clock {
   color: @fg;
   font-weight: 700;
-  padding: 0 12px;
+  padding: 0 9px;
 }

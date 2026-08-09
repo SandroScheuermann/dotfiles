@@ -1,0 +1,20 @@
+# Development
+jdk21-openjdk
+nodejs
+python
+rustup
+github-cli
+opencode
+
+# Containers
+docker
+docker-compose
+
+# Applications retained from the current setup
+chromium
+obsidian
+steam
+vlc
+
+# Optional notebook support
+fprintd

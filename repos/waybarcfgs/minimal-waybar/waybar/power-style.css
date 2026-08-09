@@ -1,11 +1,11 @@
 window {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 button {
-  color: #ffffff;
-  background-color: rgba(20, 20, 24, 0.88);
-  border: 2px solid rgba(255, 255, 255, 0.28);
+  color: #e8e8ea;
+  background-color: #222328;
+  border: 1px solid #34363c;
   border-radius: 18px;
   margin: 12px;
   padding: 28px;
@@ -13,11 +13,11 @@ button {
   font-weight: 700;
   font-family: monospace;
   min-width: 180px;
-  box-shadow: 0 0 28px rgba(0, 0, 0, 0.75);
+  box-shadow: none;
 }
 
 button:focus,
 button:hover {
-  background-color: rgba(60, 120, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.7);
+  background-color: #34363c;
+  border-color: #5a5c63;
 }

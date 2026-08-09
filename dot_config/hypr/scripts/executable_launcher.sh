@@ -8,4 +8,4 @@ if command -v hyprlauncher >/dev/null 2>&1; then
   exec hyprlauncher --quiet
 fi
 
-exec wofi --show drun
+exec wofi --show drun --allow-images

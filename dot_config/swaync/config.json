@@ -8,26 +8,26 @@
   "layer-shell": true,
   "layer-shell-cover-screen": true,
   "cssPriority": "user",
-  "control-center-margin-top": 12,
-  "control-center-margin-bottom": 12,
-  "control-center-margin-right": 12,
-  "control-center-margin-left": 12,
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-margin-left": 8,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
+  "notification-body-image-height": 48,
+  "notification-body-image-width": 72,
   "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
   "fit-to-screen": true,
   "relative-timestamps": true,
-  "control-center-width": 420,
-  "control-center-height": 640,
-  "notification-window-width": 420,
+  "control-center-width": 320,
+  "control-center-height": 460,
+  "notification-window-width": 308,
   "keyboard-shortcuts": true,
   "notification-grouping": true,
   "image-visibility": "when-available",
-  "transition-time": 180,
+  "transition-time": 120,
   "hide-on-clear": false,
   "hide-on-action": true,
   "text-empty": "No notifications",
@@ -35,7 +35,6 @@
   "widgets": [
     "title",
     "dnd",
-    "mpris",
     "notifications"
   ],
   "widget-config": {
@@ -46,12 +45,6 @@
     },
     "dnd": {
       "text": "Do not disturb"
-    },
-    "mpris": {
-      "blacklist": [],
-      "autohide": true,
-      "show-album-art": "always",
-      "loop-carousel": false
     },
     "notifications": {
       "vexpand": true

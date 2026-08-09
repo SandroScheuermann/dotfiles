@@ -19,13 +19,14 @@ This repository is a chezmoi source tree. It stores files using chezmoi's naming
 - SwayNC styling/configuration
 - Wofi fallback styling/configuration
 - Fish shell configuration
-- Alacritty configuration
+- Kitty configuration
 - Btop theme/configuration
 - Fastfetch configuration
 - GTK settings
 - Wlogout configuration
 - Starship prompt configuration
 - XDG user directory settings
+- Curated Hyprpaper wallpaper
 
 ## What's Intentionally Not Included
 
@@ -36,7 +37,7 @@ This repository is a chezmoi source tree. It stores files using chezmoi's naming
 - Passwords, API keys, tokens, and private secrets
 - Remmina/Freerdp connection profiles
 - PulseAudio/PipeWire runtime state
-- Large screenshots or generated files
+- Large screenshots or generated files (except the curated wallpaper)
 
 ## Install chezmoi
 
@@ -50,6 +51,38 @@ Check the installation:
 
 ```sh
 chezmoi --version
+```
+
+## Install Packages On CachyOS
+
+The package manifests intentionally do not include kernels, GPU drivers, or
+hardware-specific firmware. Install those for the new machine after checking
+its hardware.
+
+From the source directory:
+
+```sh
+sudo pacman -S --needed - < packages/cachyos-core.txt
+sudo pacman -S --needed - < packages/cachyos-optional.txt
+paru -S --needed - < packages/cachyos-aur.txt
+```
+
+Remove optional lines before installing anything you do not want. The AUR
+manifest is separate because `pacman` cannot install AUR packages.
+
+Enable the core desktop services after installation:
+
+```sh
+sudo systemctl enable --now NetworkManager
+sudo systemctl enable sddm
+sudo systemctl enable --now power-profiles-daemon
+```
+
+Enable these only when their packages are installed and needed:
+
+```sh
+sudo systemctl enable --now docker
+sudo systemctl enable --now bluetooth
 ```
 
 ## Use This Local Source Folder

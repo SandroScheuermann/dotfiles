@@ -4,27 +4,24 @@ add_newline = true
 palette = "glass"
 
 [palettes.glass]
-blue = "#589df6"
-cyan = "#6ee7ff"
-green = "#40efa9"
-yellow = "#f4c56a"
-red = "#ff6b7a"
-muted = "#8d9ab8"
-white = "#f7faff"
+bright = "#f2f2f2"
+soft = "#b8b8bc"
+muted = "#77777f"
+dim = "#4e4e56"
 
 [directory]
-style = "bold blue"
+style = "bold bright"
 truncation_length = 3
 truncate_to_repo = false
 format = "[$path]($style) "
 
 [git_branch]
-style = "cyan"
+style = "soft"
 format = "[$symbol$branch]($style) "
 symbol = " "
 
 [git_status]
-style = "yellow"
+style = "soft"
 format = "([$all_status$ahead_behind]($style) )"
 
 [cmd_duration]
@@ -33,6 +30,6 @@ format = "[$duration]($style)"
 min_time = 1000
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](blue)"
+success_symbol = "[❯](bright)"
+error_symbol = "[❯](soft)"
+vimcmd_symbol = "[❮](bright)"

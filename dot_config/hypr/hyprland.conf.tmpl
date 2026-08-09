@@ -15,16 +15,17 @@ bind = $mainMod, V, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/clipboard-
 bind = $mainMod, R, exec, $menu
 bind = $mainMod CTRL, L, exec, hyprlock
 bind = $mainMod, N, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/night-toggle.sh
+bind = $mainMod, O, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/obsidian-special.sh
 
-bind = $mainMod, 1, workspace, 1
-bind = $mainMod, 2, workspace, 2
-bind = $mainMod, 3, workspace, 3
-bind = $mainMod, 4, workspace, 4
-bind = $mainMod, 5, workspace, 5
-bind = $mainMod, 6, workspace, 6
-bind = $mainMod, 7, workspace, 7
-bind = $mainMod, 8, workspace, 8
-bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 1, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 1
+bind = $mainMod, 2, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 2
+bind = $mainMod, 3, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 3
+bind = $mainMod, 4, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 4
+bind = $mainMod, 5, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 5
+bind = $mainMod, 6, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 6
+bind = $mainMod, 7, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 7
+bind = $mainMod, 8, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 8
+bind = $mainMod, 9, exec, {{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh 9
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
 bind = $mainMod SHIFT, 2, movetoworkspace, 2
 bind = $mainMod SHIFT, 3, movetoworkspace, 3
@@ -51,47 +52,47 @@ bind = , Print, exec, env WAYLAND_DISPLAY=wayland-1 hyprshot -m output --clipboa
 
 exec-once = $barminimal 
 exec-once = hyprpaper
-exec-once = hyprlauncher --daemon --quiet >/dev/null 2>&1
+exec-once = hyprlauncher --daemon --quiet
 exec-once = command -v wl-paste >/dev/null 2>&1 && command -v cliphist >/dev/null 2>&1 && wl-paste --type text --watch cliphist store
 
 general {
-    gaps_in = 5
-    gaps_out = 8
+    gaps_in = 8
+    gaps_out = 14
     border_size = 1
-    col.active_border = rgba(589df6cc)
-    col.inactive_border = rgba(ffffff18)
+    col.active_border = rgba(ffffff28)
+    col.inactive_border = rgba(ffffff14)
     resize_on_border = true
 }
 
 decoration {
-    rounding = 12
+    rounding = 20
     active_opacity = 1.0
-    inactive_opacity = 0.96
+    inactive_opacity = 1.0
     fullscreen_opacity = 1.0
-    dim_around = 0.72
+    dim_around = 0.62
     shadow {
         enabled = true
         range = 18
         render_power = 2
-        color = rgba(0000003f)
+        color = rgba(00000055)
     }
 
     blur {
-        enabled = true
-        size = 6
-        passes = 3
+        enabled = false
+        size = 1
+        passes = 1
         new_optimizations = true
-        ignore_opacity = true
+        ignore_opacity = false
         xray = false
     }
 }
 
 animations {
     enabled = true
-    bezier = glass, 0.16, 1, 0.3, 1
+    bezier = smooth, 0.16, 1, 0.3, 1
     bezier = soft, 0.2, 0.8, 0.2, 1
 
-    animation = windows, 1, 2, glass, slidefade
+    animation = windows, 1, 2, smooth, slidefade
     animation = windowsOut, 1, 2, soft, slidefade
     animation = border, 1, 5, soft
     animation = fade, 1, 4, soft
@@ -119,13 +120,16 @@ xwayland {
 	force_zero_scaling = true
 }
 
-layerrule[waybar] = blur true
-layerrule[waybar] = ignorealpha 0.25
-layerrule[wlogout] = blur true
-layerrule[wlogout] = ignorealpha 0.25
+windowrule = match:class ^(obsidian)$, workspace special:obsidian
+
+plugin:hyprglass {
+    enabled = 0
+    layers {
+        enabled = 0
+    }
+}
+
 layerrule[wlogout] = dimaround true
-layerrule[swaync-control-center] = blur true
-layerrule[swaync-control-center] = ignorealpha 0.25
+layerrule[hyprlauncher] = dimaround true
+layerrule[wofi] = dimaround true
 layerrule[swaync-control-center] = dimaround true
-layerrule[swaync-notification-window] = blur true
-layerrule[swaync-notification-window] = ignorealpha 0.25

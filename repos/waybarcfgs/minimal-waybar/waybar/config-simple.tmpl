@@ -12,7 +12,18 @@
   "position": "top",
   "modules-left": ["custom/logo", "hyprland/language"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["temperature", "cpu", "memory", "group/power-profile", "backlight", "pulseaudio#source", "pulseaudio#mic", "clock"],
+    "modules-right": [
+      "temperature",
+      "cpu",
+      "memory",
+      "group/power-profile",
+{{ if stat "/sys/class/backlight/intel_backlight" }}
+      "backlight",
+{{ end }}
+      "pulseaudio#source",
+      "pulseaudio#mic",
+      "clock"
+    ],
   "reload_style_on_change": true,
 
     "hyprland/language": {
@@ -74,7 +85,7 @@
 
     "pulseaudio#source": {
       "format": "{icon} {volume}%",
-      "format-muted": "<span foreground='red'>{icon} {volume}%</span>",
+      "format-muted": "<span foreground='#9a9ca2'>{icon} {volume}%</span>",
       "tooltip": true,
       "tooltip-format": "Volume: {volume}%",
       "format-icons": {
@@ -87,7 +98,7 @@
 
     "pulseaudio#mic": {
       "format": "{format_source}",
-      "format-source-muted": "<span foreground='red'>󰍬</span>",
+      "format-source-muted": "<span foreground='#9a9ca2'>󰍬</span>",
       "format-source": "<span foreground='white'>󰍬</span>",
       "on-click": "pactl set-source-mute 0 toggle",
       "tooltip": true,
@@ -100,7 +111,7 @@
       "format-charging": "󱐋 {capacity}%",
       "format-plugged": "󱐋 {capacity}%",
       "format-icons": {
-        "default": ["<span color='red'></span>", "<span color='orange'></span>", "", "", ""],
+        "default": ["<span color='#7a7b80'></span>", "<span color='#9a9ca2'></span>", "", "", ""],
       },
       "format-full": "󰂄",
       "tooltip": true,
@@ -142,7 +153,14 @@
         "transition-to-left": true,
         "click-to-reveal": true
       },
-      "modules": ["battery", "custom/power-saver", "custom/power-balanced", "custom/power-performance"]
+       "modules": [
+{{ if stat "/sys/class/power_supply/BAT0" }}
+         "battery",
+{{ end }}
+         "custom/power-saver",
+         "custom/power-balanced",
+         "custom/power-performance"
+       ]
     },
 
     "cpu": {
@@ -172,8 +190,8 @@
       // "thermal-zone": 2,
       // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
       "critical-threshold": 80,
-      "format-critical": "<span color='orange'>{temperatureC}~C</span>",
-      "format": "<span color='#589df6'>{temperatureC}~C</span>",
+       "format-critical": "<span color='#ffffff'>{temperatureC}~C</span>",
+       "format": "<span color='#f2f2f2'>{temperatureC}~C</span>",
       "tooltip": true,
       "tooltip-format": "Temperature: {temperatureC}°C",
       "interval": 4,
