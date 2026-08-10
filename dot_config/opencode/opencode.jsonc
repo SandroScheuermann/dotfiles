@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "./plugins/opencode-context-cache.mjs",
+    "@prevalentware/opencode-goal-plugin",
+    "opencode-skill-creator"
+  ],
+  "provider": {
+    "openai": {
+      "options": {
+        "setCacheKey": true
+      }
+    }
+  },
+  "mcp": {
+    "postgres": {
+      "type": "local",
+      "command": [
+        "/home/sandro/.bun/bin/bunx",
+        "@modelcontextprotocol/server-postgres",
+        "{env:POSTGRES_URL}"
+      ],
+      "enabled": true
+    },
+    "mcp-gsheets": {
+      "type": "local",
+      "command": [
+        "/home/sandro/.bun/bin/bunx",
+        "mcp-gsheets@latest"
+      ],
+      "environment": {
+        "GOOGLE_PROJECT_ID": "{env:GOOGLE_PROJECT_ID}",
+        "GOOGLE_APPLICATION_CREDENTIALS": "{env:GOOGLE_APPLICATION_CREDENTIALS}"
+      },
+      "enabled": true
+    }
+  },
+  "permission": {
+    "read": {
+      "~/.config/opencode/gsd-core/*": "allow"
+    },
+    "external_directory": {
+      "~/.config/opencode/gsd-core/*": "allow"
+    }
+  }
+}
