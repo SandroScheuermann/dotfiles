@@ -18,7 +18,7 @@ under `dot_config/` or `repos/`, not rendered files under `~/.config/`.
   `style-simple.css`
 - Launcher: Hyprlauncher; `dot_config/hypr/scripts/executable_launcher.sh`
   falls back to Wofi (`dot_config/wofi/`) when Hyprlauncher is unavailable
-- Active terminal: Kitty, because `hyprland.conf.tmpl` binds `$terminal = kitty`
+- Active terminal: Kitty, because `hyprland.lua.tmpl` sets `terminal = "kitty"`
   and uses it for Yazi. Alacritty, WezTerm, and Kitty configs exist, but do not
   assume they are the active terminal without checking the binding or request.
 - Notification daemon: SwayNC, configured under `dot_config/swaync/` and
@@ -33,7 +33,7 @@ the user explicitly requests a redesign.
 ## Workflow
 
 1. Inspect the relevant source files before editing. For cross-component tasks,
-   read `README.md`, `dot_config/hypr/hyprland.conf.tmpl`, the component config,
+   read `README.md`, `dot_config/hypr/hyprland.lua.tmpl`, the component config,
    and any referenced scripts or Waybar profile.
 2. Follow chezmoi naming and templating. Keep `dot_` prefixes, executable
    prefixes, and `{{ .chezmoi.homeDir }}` templates intact. Do not hardcode the
@@ -73,7 +73,7 @@ the user explicitly requests a redesign.
 
 | Concern | Source path |
 | --- | --- |
-| Hyprland bindings/startup | `dot_config/hypr/hyprland.conf.tmpl` |
+| Hyprland bindings/startup | `dot_config/hypr/hyprland.lua.tmpl` |
 | Launcher dispatch | `dot_config/hypr/scripts/executable_launcher.sh` |
 | Hyprlauncher theme/config | `dot_config/hypr/hyprlauncher.conf`, `hyprtoolkit.conf` |
 | Waybar active profile | `repos/waybarcfgs/minimal-waybar/waybar/config-simple.tmpl` |

@@ -11,13 +11,16 @@
   "layer": "top",
   "position": "top",
   "modules-left": ["custom/logo", "hyprland/language"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["group/workspaces"],
     "modules-right": [
+      "custom/caffeine",
       "temperature",
       "cpu",
       "memory",
+{{ if and (eq .machineType "notebook") (stat "/sys/class/power_supply/BAT0") }}
       "group/power-profile",
-{{ if stat "/sys/class/backlight/intel_backlight" }}
+{{ end }}
+{{ if and (eq .machineType "notebook") (stat "/sys/class/backlight/intel_backlight") }}
       "backlight",
 {{ end }}
       "pulseaudio#source",
@@ -34,23 +37,115 @@
       "tooltip": false,
     },
 
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "tooltip": false,
-      "all-outputs": true,
-      "sort-by-number": true,
-      "disable-scroll": false,
-      "on-scroll-up": "hyprctl dispatch workspace +1",
-      "on-scroll-down": "hyprctl dispatch workspace -1",
-      "active-only": false
+    "group/workspaces": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/workspace-1",
+        "custom/workspace-2",
+        "custom/workspace-3",
+        "custom/workspace-4",
+        "custom/workspace-5",
+        "custom/workspace-6",
+        "custom/workspace-7",
+        "custom/workspace-8",
+        "custom/workspace-9",
+        "custom/workspace-10"
+      ]
     },
 
+    "custom/workspace-1": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 1",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 1",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-2": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 2",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 2",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-3": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 3",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 3",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-4": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 4",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 4",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-5": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 5",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 5",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-6": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 6",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 6",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-7": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 7",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 7",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-8": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 8",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 8",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-9": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 9",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 9",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
+    "custom/workspace-10": {
+      "exec": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh status 10",
+      "return-type": "json",
+      "signal": 8,
+      "on-click": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh focus 10",
+      "on-scroll-up": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh previous",
+      "on-scroll-down": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/workspace-switch.sh next"
+    },
 
     "custom/logo": {
       "format": "",
       "tooltip": true,
       "tooltip-format": "Power Options",
       "on-click": "wlogout -n -b 2 -c 0 -r 0 -T 360 -B 360 -L 560 -R 760"
+    },
+    "custom/caffeine": {
+      "exec": "{{ .chezmoi.homeDir }}/.local/bin/mouse-jiggler status",
+      "return-type": "json",
+      "interval": 2,
+      "tooltip": true,
+      "on-click": "{{ .chezmoi.homeDir }}/.local/bin/mouse-jiggler toggle"
     },
     "clock": {
       "tooltip": true,
@@ -93,14 +188,16 @@
         "default": ["", "", ""],
       },
       "scroll-step": 1,
-      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/audio-device-menu.sh output"
     },
 
     "pulseaudio#mic": {
       "format": "{format_source}",
       "format-source-muted": "<span foreground='#9a9ca2'>󰍬</span>",
       "format-source": "<span foreground='white'>󰍬</span>",
-      "on-click": "pactl set-source-mute 0 toggle",
+      "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "on-click-right": "{{ .chezmoi.homeDir }}/.config/hypr/scripts/audio-device-menu.sh input",
       "tooltip": true,
       "tooltip-format": "Microphone Status"
     },
@@ -154,7 +251,7 @@
         "click-to-reveal": true
       },
        "modules": [
-{{ if stat "/sys/class/power_supply/BAT0" }}
+{{ if and (eq .machineType "notebook") (stat "/sys/class/power_supply/BAT0") }}
          "battery",
 {{ end }}
          "custom/power-saver",
@@ -187,11 +284,14 @@
     },
 
     "temperature": {
-      // "thermal-zone": 2,
-      // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+      "hwmon-path-abs": [
+        "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+        "/sys/devices/platform/coretemp.0/hwmon"
+      ],
+      "input-filename": "temp1_input",
       "critical-threshold": 80,
-       "format-critical": "<span color='#ffffff'>{temperatureC}~C</span>",
-       "format": "<span color='#f2f2f2'>{temperatureC}~C</span>",
+      "format-critical": "<span color='#ffffff'>{temperatureC}°C</span>",
+      "format": "<span color='#f2f2f2'>{temperatureC}°C</span>",
       "tooltip": true,
       "tooltip-format": "Temperature: {temperatureC}°C",
       "interval": 4,

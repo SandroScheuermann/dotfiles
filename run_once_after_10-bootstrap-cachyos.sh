@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ ! -x /usr/bin/pacman ]]; then
+    printf 'This CachyOS bootstrap requires pacman.\n' >&2
+    exit 1
+fi
+
+core_manifest="$HOME/packages/cachyos-core.txt"
+optional_manifest="$HOME/packages/cachyos-optional.txt"
+packages=()
+
+append_manifest() {
+    local manifest=$1
+    local line
+
+    if [[ ! -f "$manifest" ]]; then
+        printf 'Package manifest not found: %s\n' "$manifest" >&2
+        exit 1
+    fi
+
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line=${line%$'\r'}
+        line=${line#"${line%%[![:space:]]*}"}
+        line=${line%"${line##*[![:space:]]}"}
+
+        [[ -z "$line" || "$line" == \#* ]] && continue
+        [[ "$line" == "steam" || "$line" == "fprintd" ]] && continue
+        packages+=("$line")
+    done < "$manifest"
+}
+
+append_manifest "$core_manifest"
+append_manifest "$optional_manifest"
+
+printf 'Installing %d core and optional packages...\n' "${#packages[@]}"
+sudo -v
+sudo pacman -S --needed "${packages[@]}"
+
+if systemctl is-enabled greetd.service >/dev/null 2>&1; then
+    sudo systemctl disable greetd.service
+fi
+
+noctalia_packages=()
+for package in cachyos-hypr-noctalia noctalia-greeter noctalia; do
+    if pacman -Qq "$package" >/dev/null 2>&1; then
+        noctalia_packages+=("$package")
+    fi
+done
+
+if ((${#noctalia_packages[@]})); then
+    sudo pacman -Rns "${noctalia_packages[@]}"
+fi
+
+sudo systemctl enable NetworkManager.service power-profiles-daemon.service
+sudo systemctl enable sddm.service
+
+printf 'Bootstrap complete. Reboot to start the SDDM-managed Hyprland session.\n'

@@ -53,6 +53,25 @@ Check the installation:
 chezmoi --version
 ```
 
+## One-command Setup
+
+On a fresh CachyOS installation, initialize and apply the repo:
+
+```sh
+chezmoi init --apply https://github.com/SandroScheuermann/dotfiles.git
+```
+
+The one-time bootstrap script asks for sudo access and then:
+
+- installs all core packages;
+- installs optional packages except `steam` and `fprintd`;
+- removes Noctalia and greetd packages when present;
+- enables NetworkManager, power-profiles-daemon, and SDDM;
+- removes stale Noctalia and legacy Hyprland configuration through `.chezmoiremove`.
+
+The AUR manifest is intentionally not installed automatically. Review it and
+install its packages separately with `paru`.
+
 ## Install Packages On CachyOS
 
 The package manifests intentionally do not include kernels, GPU drivers, or
@@ -62,9 +81,9 @@ its hardware.
 From the source directory:
 
 ```sh
-sudo pacman -S --needed - < packages/cachyos-core.txt
-sudo pacman -S --needed - < packages/cachyos-optional.txt
-paru -S --needed - < packages/cachyos-aur.txt
+grep -Ev '^[[:space:]]*(#|$)' packages/cachyos-core.txt | sudo pacman -S --needed -
+grep -Ev '^[[:space:]]*(#|$)' packages/cachyos-optional.txt | sudo pacman -S --needed -
+grep -Ev '^[[:space:]]*(#|$)' packages/cachyos-aur.txt | paru -S --needed -
 ```
 
 Remove optional lines before installing anything you do not want. The AUR
@@ -93,6 +112,20 @@ From this machine, initialize chezmoi with this folder as the source:
 chezmoi init --source ~/dotfiles-chezmoi
 ```
 
+During initialization, choose the machine profile:
+
+- `desktop`: forces the performance power profile and hides notebook-only Waybar modules.
+- `notebook`: enables battery, brightness, and selectable power profiles when supported by the hardware.
+
+The choice is stored only on the local machine in `~/.config/chezmoi/chezmoi.toml`:
+
+```toml
+[data]
+machineType = "desktop"
+```
+
+To change the profile later, edit `machineType`, then run `chezmoi apply`.
+
 Preview what would change:
 
 ```sh
@@ -108,14 +141,14 @@ chezmoi apply
 Edit a managed file through chezmoi:
 
 ```sh
-chezmoi edit ~/.config/hypr/hyprland.conf
+chezmoi edit ~/.config/hypr/hyprland.lua
 chezmoi apply
 ```
 
 Add or update a file from your home directory into the source tree:
 
 ```sh
-chezmoi add ~/.config/hypr/hyprland.conf
+chezmoi add ~/.config/hypr/hyprland.lua
 chezmoi add ~/.config/waybar/config.jsonc
 ```
 

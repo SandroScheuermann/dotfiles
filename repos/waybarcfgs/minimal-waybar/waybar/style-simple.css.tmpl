@@ -1,4 +1,5 @@
 @import "themes/main.css";
+@import url("file://{{ .chezmoi.homeDir }}/.cache/hypr/domain-waybar.css");
 
 * {
   border: none;
@@ -17,15 +18,15 @@ window#waybar {
 window#waybar > box {
   margin: 8px 12px 0px 12px;
   padding: 4px 6px;
-  background: #18191c;
-  border: 1px solid #34363c;
+  background: @domain_bg;
+  border: 1px solid @domain_border;
   border-radius: 18px;
   box-shadow: none;
 }
 
 tooltip {
   background: @tooltip_bg;
-  border: 1px solid #34363c;
+  border: 1px solid @domain_border;
   border-radius: 14px;
 }
 
@@ -39,6 +40,7 @@ tooltip label {
 #window,
 #custom-spotify,
 #workspaces,
+#custom-caffeine,
 #temperature,
 #cpu,
 #memory,
@@ -89,7 +91,7 @@ window#waybar.empty #window {
   padding: 0 5px;
 }
 
-#workspaces button {
+#workspaces .module {
   background: transparent;
   border-radius: 999px;
   color: @workspace_inactive;
@@ -97,21 +99,28 @@ window#waybar.empty #window {
   padding: 0 5px;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
+#workspaces .module.active {
   background: @workspace_active;
-  border: 1px solid #4a4c52;
+  border: 1px solid @domain_border;
   color: @fg_alt;
 }
 
-#workspaces button.urgent {
+#workspaces .module.hidden {
+  font-size: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+#workspaces .module.urgent {
   color: @urgent;
 }
 
-#workspaces button:hover,
+#workspaces .module:hover,
 #custom-logo:hover,
 #language:hover,
 #custom-spotify:hover,
+#custom-caffeine:hover,
 #clock:hover,
 #cpu:hover,
 #temperature:hover,
@@ -128,6 +137,18 @@ window#waybar.empty #window {
 
 #temperature {
   color: @active;
+}
+
+#custom-caffeine {
+  color: @fg_soft;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+#custom-caffeine.active {
+  background: @workspace_active;
+  border-color: @domain_border;
 }
 
 #cpu,
