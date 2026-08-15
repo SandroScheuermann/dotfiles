@@ -1,3 +1,27 @@
 README.md
 .gitignore
 .git/
+
+{{ if eq (index . "desktopSession") "i3" -}}
+# The X11 profile replaces the Wayland compositor and its session helpers.
+.config/hypr/hyprland.lua
+.config/hypr/hypridle.conf
+.config/hypr/hyprland.conf
+.config/hypr/config
+.config/hypr/hyprlauncher.conf
+.config/hypr/hyprlock.conf
+.config/hypr/hyprpaper.conf
+.config/hypr/hyprtoolkit.conf
+.config/hypr/workspace-domains.conf
+.config/hypr/scripts
+.config/swaync
+.config/wlogout
+.config/wofi
+repos/waybarcfgs
+{{ else -}}
+# The Hyprland profile does not need the X11 session stack.
+.config/i3
+.config/polybar
+.config/rofi
+.config/dunst
+{{ end -}}

@@ -1,2 +1,25 @@
 .config/hypr/hyprland.conf
 .config/hypr/config
+{{ if eq (index . "desktopSession") "i3" -}}
+.config/hypr/hyprland.lua
+.config/hypr/hypridle.conf
+.config/hypr/hyprlauncher.conf
+.config/hypr/hyprlock.conf
+.config/hypr/hyprpaper.conf
+.config/hypr/hyprtoolkit.conf
+.config/hypr/workspace-domains.conf
+.config/hypr/scripts
+.config/swaync
+.config/wlogout
+.config/wofi
+.config/picom.conf
+.config/i3/workspace-domains.conf
+.cache/i3/domain-polybar.ini
+repos/waybarcfgs
+{{ else -}}
+.config/i3
+.config/polybar
+.config/rofi
+.config/dunst
+.config/picom.conf
+{{ end -}}

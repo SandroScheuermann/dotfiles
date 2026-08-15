@@ -6,8 +6,9 @@ chezmoi
 paru
 sudo
 
-# Session and Hyprland desktop
+# Session and desktop
 sddm
+{{ if ne (index . "desktopSession") "i3" -}}
 hyprland
 hypridle
 hyprlock
@@ -19,11 +20,34 @@ waybar
 swaync
 wlogout
 wofi
+{{ else -}}
+i3-wm
+polybar
+rofi
+dunst
+i3lock-color
+xss-lock
+xprintidle
+redshift
+maim
+slop
+xclip
+xdotool
+clipmenu
+xorg-xinput
+xorg-xrandr
+xorg-xset
+xorg-xsetroot
+xorg-xkill
+xdg-desktop-portal-gtk
+{{ end -}}
 kitty
 yazi
+{{ if ne (index . "desktopSession") "i3" -}}
 uwsm
 xdg-desktop-portal-hyprland
 xorg-xwayland
+{{ end -}}
 polkit-kde-agent
 
 # Audio, notifications, power and clipboard
@@ -33,8 +57,10 @@ pipewire-pulse
 wireplumber
 jq
 libnotify
+{{ if ne (index . "desktopSession") "i3" -}}
 wl-clipboard
 cliphist
+{{ end -}}
 playerctl
 brightnessctl
 power-profiles-daemon

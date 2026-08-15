@@ -1,0 +1,101 @@
+# i3 X11 profile managed by chezmoi.
+
+set $mod Mod4
+set $terminal kitty
+set $scripts {{ .chezmoi.homeDir }}/.config/i3/scripts
+set $workspace {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh
+
+font pango:JetBrainsMono Nerd Font Propo 10
+floating_modifier $mod
+focus_follows_mouse yes
+mouse_warping none
+
+gaps inner 8
+gaps outer 14
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders smart
+
+client.focused #ffffff #18191c #ffffff #ffffff #ffffff
+client.focused_inactive #4a4c52 #222328 #d4d4d6 #4a4c52 #4a4c52
+client.unfocused #34363c #18191c #9a9ca2 #34363c #34363c
+client.urgent #d2ad92 #4b3529 #ffffff #d2ad92 #d2ad92
+client.placeholder #34363c #18191c #9a9ca2 #34363c #34363c
+client.background #18191c
+
+# Keep the existing shortcut vocabulary while replacing compositor dispatchers.
+bindsym $mod+t exec --no-startup-id $terminal
+bindsym $mod+q exec --no-startup-id $scripts/close-or-hide.sh
+bindsym $mod+Shift+q exec --no-startup-id $scripts/force-kill.sh
+bindsym $mod+e exec --no-startup-id $terminal -e yazi
+bindsym $mod+Shift+v floating toggle
+bindsym $mod+v exec --no-startup-id $scripts/clipboard-menu.sh
+bindsym $mod+r exec --no-startup-id $scripts/launcher.sh
+bindsym $mod+Control+l exec --no-startup-id $scripts/lock.sh
+bindsym $mod+n exec --no-startup-id $scripts/night-toggle.sh
+bindsym $mod+m exec --no-startup-id $scripts/mouse-jiggler.sh toggle
+bindsym $mod+o exec --no-startup-id $scripts/special-window.sh obsidian obsidian
+bindsym $mod+w exec --no-startup-id $scripts/special-window.sh winboat winboat
+
+bindsym $mod+1 exec --no-startup-id $workspace focus 1
+bindsym $mod+2 exec --no-startup-id $workspace focus 2
+bindsym $mod+3 exec --no-startup-id $workspace focus 3
+bindsym $mod+4 exec --no-startup-id $workspace focus 4
+bindsym $mod+5 exec --no-startup-id $workspace focus 5
+bindsym $mod+6 exec --no-startup-id $workspace focus 6
+bindsym $mod+7 exec --no-startup-id $workspace focus 7
+bindsym $mod+8 exec --no-startup-id $workspace focus 8
+bindsym $mod+9 exec --no-startup-id $workspace focus 9
+bindsym $mod+0 exec --no-startup-id $workspace focus 10
+bindsym $mod+Shift+1 exec --no-startup-id $workspace move 1
+bindsym $mod+Shift+2 exec --no-startup-id $workspace move 2
+bindsym $mod+Shift+3 exec --no-startup-id $workspace move 3
+bindsym $mod+Shift+4 exec --no-startup-id $workspace move 4
+bindsym $mod+Shift+5 exec --no-startup-id $workspace move 5
+bindsym $mod+Shift+6 exec --no-startup-id $workspace move 6
+bindsym $mod+Shift+7 exec --no-startup-id $workspace move 7
+bindsym $mod+Shift+8 exec --no-startup-id $workspace move 8
+bindsym $mod+Shift+9 exec --no-startup-id $workspace move 9
+bindsym $mod+Shift+0 exec --no-startup-id $workspace move 10
+
+bindsym $mod+F1 exec --no-startup-id $workspace domain 1
+bindsym $mod+F2 exec --no-startup-id $workspace domain 2
+
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+bindsym $mod+Shift+h resize shrink width 20 px
+bindsym $mod+Shift+l resize grow width 20 px
+bindsym $mod+Shift+k resize shrink height 20 px
+bindsym $mod+Shift+j resize grow height 20 px
+bindsym $mod+BackSpace exec --no-startup-id $scripts/normalize-window.sh
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+s exec --no-startup-id $scripts/screenshot-region.sh
+bindsym $mod+s exec --no-startup-id $scripts/screenshot-window.sh
+
+# Useful hardware-key equivalents for the controls already exposed by Polybar.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Obsidian and Winboat retain the Hyprland special-workspace behavior through
+# i3's scratchpad. Child Winboat windows remain floating instead of being
+# forced into a maximized state by the application.
+for_window [class="^(md[.]Obsidian|obsidian)$"] move scratchpad
+for_window [class="^(md[.]Obsidian|obsidian)$"] floating enable
+for_window [class="^winboat$"] move scratchpad
+for_window [class="^winboat$"] floating enable
+for_window [class="^winboat-.+"] floating enable
+for_window [class="^Rofi$"] floating enable, border pixel 1
+
+exec_always --no-startup-id $scripts/startup.sh

@@ -5,7 +5,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 This repository is a chezmoi source tree. It stores files using chezmoi's naming conventions, for example:
 
 - `dot_config/hypr` becomes `~/.config/hypr`
-- `dot_config/waybar` becomes `~/.config/waybar`
+- `dot_config/i3` becomes `~/.config/i3` when the `i3` session is selected
 - `repos/waybarcfgs/minimal-waybar` becomes `~/repos/waybarcfgs/minimal-waybar`
 - `executable_script.sh` becomes an executable `script.sh`
 - `*.tmpl` files are rendered as templates before being written
@@ -13,8 +13,10 @@ This repository is a chezmoi source tree. It stores files using chezmoi's naming
 ## What's Included
 
 - Hyprland configuration and scripts
+- i3/X11 configuration and scripts as an alternative session
 - Hyprlauncher / Hyprtoolkit theme
 - Waybar configuration
+- Polybar, Rofi, and Dunst configuration for i3
 - Minimal Waybar setup under `~/repos/waybarcfgs/minimal-waybar`
 - SwayNC styling/configuration
 - Wofi fallback styling/configuration
@@ -61,13 +63,15 @@ On a fresh CachyOS installation, initialize and apply the repo:
 chezmoi init --apply https://github.com/SandroScheuermann/dotfiles.git
 ```
 
-The one-time bootstrap script asks for sudo access and then:
+The bootstrap script asks for sudo access on first setup and when the rendered
+desktop session changes, then:
 
 - installs all core packages;
 - installs optional packages except `steam` and `fprintd`;
-- removes Noctalia and greetd packages when present;
+- disables greetd and removes Noctalia packages when present;
 - enables NetworkManager, power-profiles-daemon, and SDDM;
-- removes stale Noctalia and legacy Hyprland configuration through `.chezmoiremove`.
+- installs the selected desktop session through the rendered package manifest;
+- removes stale session configuration through `.chezmoiremove`.
 
 The AUR manifest is intentionally not installed automatically. Review it and
 install its packages separately with `paru`.
@@ -114,17 +118,29 @@ chezmoi init --source ~/dotfiles-chezmoi
 
 During initialization, choose the machine profile:
 
-- `desktop`: forces the performance power profile and hides notebook-only Waybar modules.
+- `desktop`: forces the performance power profile and hides notebook-only status modules.
 - `notebook`: enables battery, brightness, and selectable power profiles when supported by the hardware.
+
+The same initialization also asks for the desktop session:
+
+- `hyprland`: the current Wayland profile with Hyprland, Waybar, SwayNC, and Hypr utilities.
+- `i3`: an X11 profile with i3, Polybar, Rofi, Dunst, and X11 replacements for the Hyprland utilities.
+
+The X11 profile keeps the same Super-key shortcuts and workspace domains. Each monitor
+has independent D1/D2 domains with slots 1-10, and the focused monitor receives keyboard
+workspace shortcuts. Polybar controls act on the monitor that owns the bar.
 
 The choice is stored only on the local machine in `~/.config/chezmoi/chezmoi.toml`:
 
 ```toml
 [data]
 machineType = "desktop"
+desktopSession = "hyprland"
 ```
 
-To change the profile later, edit `machineType`, then run `chezmoi apply`.
+To change a profile later, edit `machineType` or `desktopSession`, then run `chezmoi apply`.
+Switching `desktopSession` changes the rendered package manifest and session files; it
+does not automatically uninstall packages belonging to the other session.
 
 Preview what would change:
 
@@ -149,7 +165,7 @@ Add or update a file from your home directory into the source tree:
 
 ```sh
 chezmoi add ~/.config/hypr/hyprland.lua
-chezmoi add ~/.config/waybar/config.jsonc
+chezmoi add ~/.config/i3/config
 ```
 
 See managed files:

@@ -34,7 +34,7 @@ append_manifest() {
 append_manifest "$core_manifest"
 append_manifest "$optional_manifest"
 
-printf 'Installing %d core and optional packages...\n' "${#packages[@]}"
+printf 'Installing %d core and optional packages for the {{ if eq (index . "desktopSession") "i3" }}i3{{ else }}hyprland{{ end }} session...\n' "${#packages[@]}"
 sudo -v
 sudo pacman -S --needed "${packages[@]}"
 
@@ -56,4 +56,4 @@ fi
 sudo systemctl enable NetworkManager.service power-profiles-daemon.service
 sudo systemctl enable sddm.service
 
-printf 'Bootstrap complete. Reboot to start the SDDM-managed Hyprland session.\n'
+printf 'Bootstrap complete. Reboot to start the SDDM-managed {{ if eq (index . "desktopSession") "i3" }}i3{{ else }}hyprland{{ end }} session.\n'

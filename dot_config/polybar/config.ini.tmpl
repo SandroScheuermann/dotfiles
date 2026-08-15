@@ -1,0 +1,221 @@
+include-file = {{ .chezmoi.homeDir }}/.config/polybar/colors.ini
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+[bar/main]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 40
+offset-y = 8
+fixed-center = true
+wm-restack = i3
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 2
+line-color = ${colors.primary}
+border-size = 1
+border-color = ${colors.border}
+padding-left = 8
+padding-right = 8
+module-margin = 0
+font-0 = JetBrainsMono Nerd Font Propo:size=10;2
+font-1 = Noto Sans:size=10;2
+modules-left = caffeine
+modules-center = domain workspace-1 workspace-2 workspace-3 workspace-4 workspace-5 workspace-6 workspace-7 workspace-8 workspace-9 workspace-10
+modules-right = temperature cpu memory{{ if and (eq .machineType "notebook") (stat "/sys/class/power_supply/BAT0") }} battery{{ end }}{{ if and (eq .machineType "notebook") (stat "/sys/class/backlight/intel_backlight") }} brightness{{ end }} audio mic clock
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/domain]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh domain
+tail = true
+format = <label>
+label = %output%
+label-foreground = ${colors.primary}
+label-padding = 1
+
+[module/workspace-1]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 1
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 1
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-2]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 2
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 2
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-3]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 3
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 3
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-4]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 4
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 4
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-5]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 5
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 5
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-6]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 6
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 6
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-7]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 7
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 7
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-8]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 8
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 8
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-9]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 9
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 9
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+[module/workspace-10]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-status.sh 10
+tail = true
+label = %output%
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh focus 10
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh previous
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/workspace-domains.sh next
+
+[module/caffeine]
+type = custom/ipc
+hook-0 = printf '\n'
+hook-1 = printf '~\n'
+hook-2 = printf '~/\n'
+initial = 0
+format = <output>
+format-foreground = ${colors.primary}
+
+[module/temperature]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/temperature.sh
+interval = 4
+label = %output%
+label-foreground = ${colors.foreground}
+label-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 4
+format = <label>
+label = CPU %percentage%%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+
+[module/memory]
+type = internal/memory
+interval = 4
+format = <label>
+label = RAM %percentage_used%%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+poll-interval = 4
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full = <label-full>
+label-charging = BAT %percentage%%
+label-discharging = BAT %percentage%%
+label-full = BAT %percentage%%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+
+[module/brightness]
+type = custom/script
+exec = brightnessctl -m | awk -F, '{print $4}'
+interval = 2
+label = BRI %output%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+scroll-up = {{ .chezmoi.homeDir }}/.config/i3/scripts/brightness-set.sh up
+scroll-down = {{ .chezmoi.homeDir }}/.config/i3/scripts/brightness-set.sh down
+
+[module/power]
+type = custom/script
+exec = {{ .chezmoi.homeDir }}/.config/i3/scripts/power-profile.sh status
+interval = 10
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/power-profile.sh menu
+label = %output%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+
+[module/audio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 2
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-volume = VOL %percentage%%
+label-muted = VOL muted
+label-volume-foreground = ${colors.foreground}
+label-muted-foreground = ${colors.foreground-alt}
+label-volume-padding = 1
+label-muted-padding = 1
+click-left = pactl set-sink-mute @DEFAULT_SINK@ toggle
+click-right = {{ .chezmoi.homeDir }}/.config/i3/scripts/audio-device-menu.sh output
+
+[module/mic]
+type = custom/script
+exec = sh -c 'if pactl get-source-mute @DEFAULT_SOURCE@ | grep -q yes; then printf "MIC muted"; else printf "MIC on"; fi'
+interval = 2
+label = %output%
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+click-left = pactl set-source-mute @DEFAULT_SOURCE@ toggle
+click-right = {{ .chezmoi.homeDir }}/.config/i3/scripts/audio-device-menu.sh input
+
+[module/clock]
+type = internal/date
+interval = 1
+date = %a %b %d  %I:%M %p
+date-alt = %Y-%m-%d %H:%M:%S
+label = %date%
+label-foreground = ${colors.foreground}
+label-padding = 1
+click-left = {{ .chezmoi.homeDir }}/.config/i3/scripts/notification-panel.sh
