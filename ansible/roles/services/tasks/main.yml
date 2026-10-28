@@ -1,0 +1,23 @@
+---
+- name: Validar entrada de serviços
+  ansible.builtin.assert:
+    that:
+      - setup_services | default([]) is sequence
+      - setup_services | default([]) is not string
+    quiet: true
+
+- name: Habilitar ou iniciar unidades de sistema explicitamente selecionadas
+  become: true
+  ansible.builtin.systemd_service:
+    name: "{{ item.name }}"
+    enabled: "{{ item.enabled }}"
+    state: "{{ omit if item.enable_only | default(false) else item.state | default('started') }}"
+  loop: "{{ setup_services | default([]) | selectattr('scope', 'equalto', 'system') | list }}"
+
+- name: Habilitar unidades de usuário sem iniciar componentes gráficos fora da sessão
+  ansible.builtin.systemd_service:
+    name: "{{ item.name }}"
+    scope: user
+    enabled: "{{ item.enabled }}"
+    state: "{{ omit if item.enable_only | default(false) or item.session_only | default(false) else item.state | default('started') }}"
+  loop: "{{ setup_services | default([]) | selectattr('scope', 'equalto', 'user') | list }}"

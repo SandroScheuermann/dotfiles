@@ -1,0 +1,1520 @@
+{
+  "format": "JSON-compatible YAML",
+  "packages": [
+    {
+      "name": "accountsservice",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "alsa-firmware",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "alsa-plugins",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "alsa-utils",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "android-studio",
+      "component": "android",
+      "condition": "always",
+      "source": "aur"
+    },
+    {
+      "name": "asar",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "awesome-terminal-fonts",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "base",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "base-devel",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bash-completion",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bind",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bluez",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bluez-hid2hci",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bluez-libs",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bluez-obex",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bluez-utils",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "brave-bin",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "brightnessctl",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "btop",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "btrfs-assistant",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "btrfs-progs",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "bun",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-fish-config",
+      "component": "shell",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-hello",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-hooks",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-kernel-manager",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-keyring",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-micro-settings",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-mirrorlist",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-packageinstaller",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-plymouth-bootanimation",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-plymouth-theme",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-rate-mirrors",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-settings",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-snapper-support",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-v3-mirrorlist",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-v4-mirrorlist",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-wallpapers",
+      "component": "extras",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cachyos-zsh-config",
+      "component": "shell",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cantarell-fonts",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "chezmoi",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "chwd",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "cliphist",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "cmake",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "cpupower",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "cryptsetup",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "curl",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "debtap",
+      "component": "extras",
+      "condition": "always",
+      "source": "aur"
+    },
+    {
+      "name": "device-mapper",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "diffutils",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "dmidecode",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "dmraid",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "dnsmasq",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "docker",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "docker-compose",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "dolphin",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "dosfstools",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "duf",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "e2fsprogs",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "efibootmgr",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "efitools",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "electron39",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "electron42",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ethtool",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "exfatprogs",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "f2fs-tools",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "fastfetch",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ffmpegthumbnailer",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "fish",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "fprintd",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "freerdp",
+      "component": "remote",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "fsarchiver",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "git",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "github-cli",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "glances",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "grim",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-libav",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugin-pipewire",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugin-va",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugins-bad",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugins-base",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugins-good",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "gst-plugins-ugly",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hdparm",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hwdetect",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hwinfo",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hypridle",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprland",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprlauncher",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprlock",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprpaper",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprshot",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprsunset",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "hyprwayland-scanner",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "inetutils",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "intel-lpmd",
+      "component": "cpu-intel",
+      "condition": "intel_cpu",
+      "source": "repository"
+    },
+    {
+      "name": "intel-media-driver",
+      "component": "gpu-intel",
+      "condition": "intel_gpu",
+      "source": "repository"
+    },
+    {
+      "name": "intel-ucode",
+      "component": "cpu-intel",
+      "condition": "intel_cpu",
+      "source": "repository"
+    },
+    {
+      "name": "iwd",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "jdk21-openjdk",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "jfsutils",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "jq",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "jre-openjdk",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "kitty",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lazydocker",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "less",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lib32-mesa",
+      "component": "graphics",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lib32-opencl-mesa",
+      "component": "graphics",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lib32-vulkan-intel",
+      "component": "gpu-intel",
+      "condition": "intel_gpu",
+      "source": "repository"
+    },
+    {
+      "name": "libdvdcss",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "libgsf",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "libindicator",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "libnotify",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "libopenraw",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "limine",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "limine-mkinitcpio-hook",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "limine-snapper-sync",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "linux-cachyos",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "linux-cachyos-headers",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "linux-cachyos-lts",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "linux-cachyos-lts-headers",
+      "component": "boot",
+      "condition": "cachyos",
+      "source": "repository"
+    },
+    {
+      "name": "linux-firmware",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "llvm21-libs",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "logrotate",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lsb-release",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lsscsi",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "lvm2",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "man-db",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "man-pages",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "mdadm",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "meld",
+      "component": "remote",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "mesa-utils",
+      "component": "graphics",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "meson",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "micro",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "mkinitcpio",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "modemmanager",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "mtools",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nano",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nano-syntax-highlighting",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "neovim",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "netctl",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "networkmanager",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "networkmanager-openvpn",
+      "component": "remote",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nfs-utils",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nilfs-utils",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nodejs",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "noto-fonts",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "noto-fonts-cjk",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "noto-fonts-emoji",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nss-mdns",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "nwg-look",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "obsidian",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "opencl-mesa",
+      "component": "graphics",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "opencode",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "openssh",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "os-prober",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pacman-contrib",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "papirus-icon-theme",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "paru",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pavucontrol",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "perl",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pipewire",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pipewire-alsa",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pipewire-pulse",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pkgfile",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "playerctl",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "plocate",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "plymouth",
+      "component": "boot",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "polkit-kde-agent",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "poppler-glib",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "power-profiles-daemon",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "pv",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-build",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-click",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-defusedxml",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-ewmh",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "aur"
+    },
+    {
+      "name": "python-installer",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-packaging",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-pkg_resources",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-pulsectl",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-pyqt6-webengine",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "python-setproctitle",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "qt6-wayland",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "qt6ct",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "rebuild-detector",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "reflector",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "remmina",
+      "component": "remote",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ripgrep",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "rsync",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "rustup",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "s-nail",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "satty",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "scdoc",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "sddm",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "sg3_utils",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "shelly",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "slack-desktop-wayland",
+      "component": "work",
+      "condition": "always",
+      "source": "unresolved"
+    },
+    {
+      "name": "slurp",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "smartmontools",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "snapper",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "sof-firmware",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "starship",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "sudo",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "svt-hevc",
+      "component": "compatibility",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "swappy",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "swaync",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "sysfsutils",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "tailscale",
+      "component": "work",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "teams-for-linux",
+      "component": "work",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "texinfo",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-bitstream-vera",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-dejavu",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-jetbrains-mono-nerd",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-liberation",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-meslo-nerd",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ttf-opensans",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "twingate",
+      "component": "work",
+      "condition": "always",
+      "source": "aur"
+    },
+    {
+      "name": "ufw",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "ufw-extras",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "unrar",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "unzip",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "usb_modeswitch",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "usbutils",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "uv",
+      "component": "dev",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "uwsm",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "vim",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "vlc",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "vlc-plugins-all",
+      "component": "apps",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "vpl-gpu-rt",
+      "component": "gpu-intel",
+      "condition": "intel_gpu",
+      "source": "repository"
+    },
+    {
+      "name": "vulkan-intel",
+      "component": "gpu-intel",
+      "condition": "intel_gpu",
+      "source": "repository"
+    },
+    {
+      "name": "waybar",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "webkitgtk-6.0",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wget",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "which",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wireplumber",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wl-clipboard",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wlogout",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "woff2-font-awesome",
+      "component": "visuals",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wofi",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "wpa_supplicant",
+      "component": "network",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xdg-desktop-portal-gtk",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xdg-desktop-portal-hyprland",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xdg-user-dirs",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xdotool",
+      "component": "extras",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xfsprogs",
+      "component": "storage",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xl2tpd",
+      "component": "remote",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "xorg-xwayland",
+      "component": "desktop",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "yazi",
+      "component": "core",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "zoxide",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    },
+    {
+      "name": "zsh",
+      "component": "shell",
+      "condition": "always",
+      "source": "repository"
+    }
+  ],
+  "excluded": [
+    "chromium",
+    "firefox",
+    "spotify-launcher",
+    "steam"
+  ],
+  "excluded_manual": [
+    "spotify_player"
+  ]
+}

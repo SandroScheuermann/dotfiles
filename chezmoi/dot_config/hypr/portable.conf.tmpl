@@ -1,0 +1,4 @@
+# Generated profile: {{ .portable.profile }}. Put manual adjustments in local.conf.
+{{ range .portable.monitors }}
+monitor = {{ . }}
+{{ end }}

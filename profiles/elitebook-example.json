@@ -1,0 +1,9 @@
+{
+  "profile": "laptop",
+  "monitors": ["eDP-1,1920x1200@60,0x0,1.5", ",preferred,auto,1"],
+  "keyboard_layout": "us",
+  "keyboard_variant": "intl",
+  "fingerprint": true,
+  "packages_add": ["fprintd"],
+  "suspend": true
+}

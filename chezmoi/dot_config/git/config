@@ -1,0 +1,5 @@
+# Identity and credentials belong in ~/.gitconfig, never in this repository.
+[init]
+    defaultBranch = main
+[include]
+    path = ~/.config/git/local.conf

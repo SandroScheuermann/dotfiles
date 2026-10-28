@@ -1,0 +1,10 @@
+---
+- name: Provisionar apenas o estado declarado
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - role: ../roles/packages
+      tags: [packages]
+    - role: ../roles/services
+      tags: [services]

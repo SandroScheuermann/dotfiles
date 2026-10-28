@@ -1,0 +1,185 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "custom/logo",
+    "hyprland/language"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "temperature",
+    "cpu",
+    "memory",
+    "group/power-profile",
+    "backlight",
+    "pulseaudio#source",
+    "pulseaudio#mic",
+    "clock"
+  ],
+  "reload_style_on_change": true,
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-my": "mm",
+    "on-click": "hyprctl switchxkblayout all next",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "tooltip": false,
+    "all-outputs": true,
+    "sort-by-number": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace +1",
+    "on-scroll-down": "hyprctl dispatch workspace -1",
+    "active-only": false
+  },
+  "custom/logo": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Power Options",
+    "on-click": "wlogout -n -b 2 -c 0 -r 0 -T 360 -B 360 -L 560 -R 760"
+  },
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "Notification Center",
+    "format": "{:%a %b %d  %I:%M %p}",
+    "on-click": "swaync-client -t -w",
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "escape": true
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰖨"
+    ],
+    "scroll-step": 1,
+    "tooltip": true,
+    "tooltip-format": "Brightness: {percent}%",
+    "on-scroll-up": "__HOME__/.config/waybar/scripts/brightness-set.sh up",
+    "on-scroll-down": "__HOME__/.config/waybar/scripts/brightness-set.sh down"
+  },
+  "custom/brightness-level": {
+    "exec": "brightnessctl -m | cut -d, -f4",
+    "interval": 1,
+    "signal": 9,
+    "format": "{}",
+    "tooltip": false,
+    "on-scroll-up": "__HOME__/.config/waybar/scripts/brightness-set.sh up",
+    "on-scroll-down": "__HOME__/.config/waybar/scripts/brightness-set.sh down"
+  },
+  "pulseaudio#source": {
+    "format": "{icon} {volume}%",
+    "format-muted": "<span foreground='#9a9ca2'>{icon} {volume}%</span>",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source-muted": "<span foreground='#9a9ca2'>󰍬</span>",
+    "format-source": "<span foreground='white'>󰍬</span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": true,
+    "tooltip-format": "Microphone Status"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "󱐋 {capacity}%",
+    "format-icons": {
+      "default": [
+        "<span color='#7a7b80'></span>",
+        "<span color='#9a9ca2'></span>",
+        "",
+        "",
+        ""
+      ]
+    },
+    "format-full": "󰂄",
+    "tooltip": true,
+    "tooltip-format": "Battery: {capacity}%\n{time}\nClick to show power profiles",
+    "interval": 4
+  },
+  "custom/power-saver": {
+    "exec": "__HOME__/.config/waybar/scripts/power-profile.sh power-saver",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 10,
+    "tooltip": true,
+    "on-click": "__HOME__/.config/waybar/scripts/power-profile.sh power-saver set"
+  },
+  "custom/power-balanced": {
+    "exec": "__HOME__/.config/waybar/scripts/power-profile.sh balanced",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 10,
+    "tooltip": true,
+    "on-click": "__HOME__/.config/waybar/scripts/power-profile.sh balanced set"
+  },
+  "custom/power-performance": {
+    "exec": "__HOME__/.config/waybar/scripts/power-profile.sh performance",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 10,
+    "tooltip": true,
+    "on-click": "__HOME__/.config/waybar/scripts/power-profile.sh performance set"
+  },
+  "group/power-profile": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 400,
+      "transition-to-left": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "battery",
+      "custom/power-saver",
+      "custom/power-balanced",
+      "custom/power-performance"
+    ]
+  },
+  "cpu": {
+    "interval": 4,
+    "format": "CPU {usage}%",
+    "tooltip": true,
+    "tooltip-format": "CPU: {usage}%"
+  },
+  "memory": {
+    "format": "RAM {percentage}%",
+    "tooltip": true,
+    "tooltip-format": "RAM: {percentage}% used / {used:0.1f}G of {total:0.1f}G",
+    "interval": 4
+  },
+  "disk": {
+    "interval": 30,
+    "unit": "GB",
+    "format": "{specific_used:0.2f}G",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "Root: Used {specific_used:0.2f}G / free {specific_free:0.2f}G"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format-critical": "<span color='#ffffff'>{temperatureC}~C</span>",
+    "format": "<span color='#f2f2f2'>{temperatureC}~C</span>",
+    "tooltip": true,
+    "tooltip-format": "Temperature: {temperatureC}°C",
+    "interval": 4
+  }
+}

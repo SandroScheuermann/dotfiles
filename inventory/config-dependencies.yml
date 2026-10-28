@@ -1,0 +1,17 @@
+{
+  "dependencies": [
+    {"configuration": "Hyprland session", "component": "desktop", "required": true, "packages": ["kitty", "yazi", "waybar", "hyprlauncher", "hyprpaper", "swaync", "qt6-wayland"]},
+    {"configuration": "clipboard-menu.sh", "component": "desktop", "required": true, "packages": ["cliphist", "wl-clipboard", "hyprlauncher", "wofi", "libnotify"]},
+    {"configuration": "launcher.sh", "component": "desktop", "required": true, "packages": ["hyprlauncher", "wofi", "procps-ng"]},
+    {"configuration": "night-toggle.sh", "component": "desktop", "required": true, "packages": ["hyprsunset", "libnotify", "procps-ng"]},
+    {"configuration": "workspace-switch.sh", "component": "desktop", "required": true, "packages": ["hyprland", "jq"]},
+    {"configuration": "Obsidian special workspace", "component": "apps", "required": true, "packages": ["obsidian", "hyprland", "jq"], "note": "Atalho/regra omitidos quando Obsidian não é selecionado"},
+    {"configuration": "screenshot-edit.sh", "component": "desktop", "required": true, "packages": ["hyprshot", "grim", "slurp", "wl-clipboard", "libnotify"], "alternatives": ["satty", "swappy"]},
+    {"configuration": "Waybar brightness/power", "component": "desktop", "required": true, "packages": ["brightnessctl", "power-profiles-daemon", "procps-ng"], "note": "Backlight condicionado ao hardware; CSS inclui themes/main.css"},
+    {"configuration": "Waybar audio", "component": "desktop", "required": true, "packages": ["pipewire", "pipewire-pulse", "wireplumber", "libpulse"]},
+    {"configuration": "brightness-slider.sh", "component": "desktop", "required": false, "packages": ["python", "python-gobject", "gtk3"], "note": "Script Python, não Shell; não chamado pela configuração ativa. Dependências necessárias se ativado manualmente"},
+    {"configuration": "Hyprlock fingerprint", "component": "desktop", "required": false, "packages": ["fprintd"], "note": "Desativado por padrão; requer hardware, pacote e reinscrição local"},
+    {"configuration": "OpenCode custom plugins", "component": "dev", "required": false, "packages": ["opencode"], "manual_tools": ["rtk"], "note": "Código preservado, não executado/testado funcionalmente; plugins @latest não fixados"}
+  ],
+  "policy": "Metadados de dependências, não lista independente de instalação. Bibliotecas e ferramentas base como libpulse/procps-ng podem ser dependências transitivas. Scripts inativos não ativam instalação automática. Runtime obrigatório possui guardas em scripts/setup.py."
+}

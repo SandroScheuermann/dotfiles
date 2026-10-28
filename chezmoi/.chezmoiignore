@@ -1,0 +1,39 @@
+# Only bootstrap-provided data controls selection. No run_ scripts or externals.
+{{ if not .portable.core }}
+.config/git
+.config/nvim
+.config/yazi
+{{ end }}
+{{ if not .portable.desktop }}
+.config/hypr
+.config/waybar
+.config/swaync
+.config/wofi
+.config/wlogout
+.config/gtk-3.0
+.config/gtk-4.0
+.config/qt6ct
+{{ end }}
+{{ if not .portable.shell }}
+.bashrc
+.bash_profile
+.zshrc
+.config/fish
+.config/kitty
+.config/starship.toml
+.config/btop
+.config/fastfetch
+.config/micro
+{{ end }}
+{{ if not .portable.dev }}
+.config/opencode
+{{ end }}
+# Mutable and private state is never managed.
+**/fish_variables
+**/auth.json
+**/hosts.yml
+**/known_hosts
+**/*.key
+**/*.pem
+**/node_modules
+**/.git

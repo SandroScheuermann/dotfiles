@@ -1,24 +1,19 @@
-.DS_Store
-*.swp
-*.swo
-*~
-
-# Local editor/project metadata
-.idea/
-.vscode/
-
-# Never commit local secrets or machine state here
-secrets/
-private/
+.state/
+__pycache__/
+*.pyc
+.venv/
+local.*
+overrides.local.json
+.env
+.env.*
 *.key
 *.pem
 *.p12
 *.pfx
-*.kdbx
-
-# Heavy or generated files
-node_modules/
-.cache/
-cache/
-tmp/
-*.log
+auth.json
+hosts.yml
+credentials*
+id_rsa*
+id_ed25519*
+fish_variables
+chezmoistate.boltdb

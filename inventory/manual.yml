@@ -1,0 +1,21 @@
+{
+  "tools": [
+    {"name": "bun", "component": "dev", "resolution": "repository", "package": "bun"},
+    {"name": "uv", "component": "dev", "resolution": "repository", "package": "uv"},
+    {"name": "codex", "component": "dev", "resolution": "unresolved", "command": "codex"},
+    {"name": "herdr", "component": "dev", "resolution": "unresolved", "command": "herdr"},
+    {"name": "rtk", "component": "dev", "resolution": "unresolved", "command": "rtk"},
+    {"name": "Minzi", "component": "apps", "resolution": "unresolved", "command": "minzi-desktop"},
+    {"name": "Rust toolchain", "component": "dev", "resolution": "unresolved", "command": "rustc"},
+    {"name": "Android SDK/build-tools/system-images", "component": "android", "resolution": "unresolved", "command": "sdkmanager", "relative_paths": ["Android/Sdk/cmdline-tools/latest/bin/sdkmanager"]}
+  ],
+  "aur_checked": {
+    "endpoint": "https://aur.archlinux.org/rpc/v5/info",
+    "date": "2026-10-20",
+    "found": ["android-studio", "debtap", "twingate", "python-ewmh"],
+    "not_found": ["slack-desktop-wayland"],
+    "note": "Existência no RPC não valida PKGBUILD, assinatura, fonte ou possibilidade de compilação. Não identifica a origem histórica dos pacotes instalados."
+  },
+  "references_only": ["remove-nvidia custom script", "inactive Alacritty/Wezterm configs", "inactive Waybar config with missing resources", "weather script with IP geolocation"],
+  "policy": "Nunca copiar executáveis manuais nem substituir pacotes sem origem validada. Falhas de reprodução são explícitas; --skip-unresolved permite restauração parcial."
+}

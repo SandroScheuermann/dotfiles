@@ -1,0 +1,8 @@
+{
+  "profile": "desktop",
+  "suspend": false,
+  "fingerprint": false,
+  "keyboard_layout": "us",
+  "keyboard_variant": "intl",
+  "monitors": [",preferred,auto,1"]
+}

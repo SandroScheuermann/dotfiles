@@ -1,8 +1,0 @@
-# Install only if these services/apps are needed on the new machine.
-android-studio
-{{ if ne (index . "desktopSession") "i3" -}}
-slack-desktop-wayland
-{{ else -}}
-slack-desktop
-{{ end -}}
-twingate

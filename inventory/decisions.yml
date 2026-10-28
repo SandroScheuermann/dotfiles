@@ -1,0 +1,13 @@
+{
+  "language": "pt-BR",
+  "selection": "Todos os itens restantes mantidos por instrução expressa; exclusões anteriores preservadas.",
+  "keep": ["brave-bin", "dolphin", "obsidian", "slack-desktop-wayland", "teams-for-linux", "vlc", "remmina", "freerdp", "meld", "kitty", "fish", "zsh", "cachyos-fish-config", "cachyos-zsh-config", "starship", "zoxide", "bash-completion", "neovim", "micro", "nano", "vim", "yazi", "git", "github-cli", "openssh"],
+  "exclude": ["chromium", "firefox", "spotify-launcher", "spotify_player", "steam"],
+  "prompt": "Preservar aparência e precedência atuais, não padronizar.",
+  "implementation_approved": true,
+  "current_machine_provisioning_approved": false,
+  "push_approved": false,
+  "never_transfer": ["browser profiles", "authentication sessions", "tokens", "private keys", "passwords", "known_hosts", "network credentials", "Git identity", "application accounts", "chezmoi state", "raw fish_variables"],
+  "hardware": "Condicional ao destino; configuração do EliteBook apenas como exemplo opt-in.",
+  "existing_repository": "Preservado sem alterações; nenhum histórico ou remote importado."
+}

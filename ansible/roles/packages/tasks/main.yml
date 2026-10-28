@@ -1,0 +1,36 @@
+---
+- name: Validar entrada de pacotes
+  ansible.builtin.assert:
+    that:
+      - setup_packages is defined
+      - setup_packages is sequence
+      - setup_packages is not string
+      - setup_packages | reject('match', '^[a-zA-Z0-9@_+.-]+$') | list | length == 0
+    quiet: true
+
+- name: Consultar pacotes instalados sem modificar o banco
+  ansible.builtin.command:
+    argv: [pacman, -Qq]
+  register: installed_packages
+  changed_when: false
+  check_mode: false
+
+- name: Calcular somente os pacotes ausentes
+  ansible.builtin.set_fact:
+    missing_packages: "{{ setup_packages | difference(installed_packages.stdout_lines) | sort }}"
+
+- name: Relatar instalação prevista no check mode
+  ansible.builtin.debug:
+    var: missing_packages
+  changed_when: missing_packages | length > 0
+  when: ansible_check_mode
+
+- name: Instalar sem atualizar bases ou remover pacotes
+  become: true
+  no_log: true
+  ansible.builtin.command:
+    argv: "{{ ['pacman', '-S', '--needed', '--noconfirm', '--'] + missing_packages }}"
+  changed_when: true
+  when:
+    - not ansible_check_mode
+    - missing_packages | length > 0

@@ -1,5 +1,0 @@
-[includeIf "gitdir:~/Inlog-Repos/"]
-	path = ~/.gitconfig-inlog
-
-[includeIf "gitdir:~/Personal-Repos/"]
-	path = ~/.gitconfig-personal

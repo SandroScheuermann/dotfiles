@@ -1,0 +1,24 @@
+{
+  "services": [
+    {"name": "NetworkManager.service", "scope": "system", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "systemd-resolved.service", "scope": "system", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "systemd-timesyncd.service", "scope": "system", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "sddm.service", "scope": "system", "component": "desktop", "enabled": true, "state": "stopped", "enable_only": true},
+    {"name": "bluetooth.service", "scope": "system", "component": "network", "enabled": true, "state": "started"},
+    {"name": "avahi-daemon.service", "scope": "system", "component": "network", "enabled": true, "state": "started"},
+    {"name": "ufw.service", "scope": "system", "component": "network", "enabled": true, "enable_only": true},
+    {"name": "docker.service", "scope": "system", "component": "dev", "enabled": true, "state": "started"},
+    {"name": "tailscaled.service", "scope": "system", "component": "work", "enabled": true, "state": "started"},
+    {"name": "intel_lpmd.service", "scope": "system", "component": "cpu-intel", "enabled": true, "state": "started"},
+    {"name": "ananicy-cpp.service", "scope": "system", "component": "extras", "condition": "cachyos", "enabled": true, "state": "started"},
+    {"name": "fstrim.timer", "scope": "system", "component": "storage", "enabled": true, "state": "started"},
+    {"name": "pipewire.socket", "scope": "user", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "pipewire-pulse.socket", "scope": "user", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "wireplumber.service", "scope": "user", "component": "desktop", "enabled": true, "state": "started"},
+    {"name": "hypridle.service", "scope": "user", "component": "desktop", "enabled": true, "state": "started", "session_only": true},
+    {"name": "xdg-user-dirs.service", "scope": "user", "component": "desktop", "enabled": true, "state": "started", "enable_only": true},
+    {"name": "p11-kit-server.socket", "scope": "user", "component": "desktop", "enabled": true, "state": "started"}
+  ],
+  "policy": "Serviços de boot, Snapper e redes não são clonados cegamente. --services é opt-in; não desabilita unidades não gerenciadas. Não configura firewall, DNS, VPN ou login automaticamente.",
+  "manual_review": ["Existing display manager conflict", "ufw rules before starting firewall", "Snapper configurations and timers", "limine-snapper-sync", "cachyos-rate-mirrors timer", "cachyos-iw-set-regdomain path", "NetworkManager wait-online/dispatcher", "Twingate failed autostart", "stale Ly symlink", "Avahi/network exposure", "Docker privilege model"]
+}

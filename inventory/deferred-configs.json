@@ -1,0 +1,12 @@
+{
+  "deferred": [],
+  "redacted_documentation": [
+    "gsd-core/references/verification-patterns.md: credential example assignments replaced with <LOCAL_ONLY> before export"
+  ],
+  "generated_not_copied": [
+    "Bun generated completions (recreate from bun)",
+    "raw fish_variables",
+    "application profiles/auth/session state"
+  ],
+  "opencode_plugins": "Current @latest plugin references preserved. No plugin executed or downloaded; no exact npm lockfile captured."
+}

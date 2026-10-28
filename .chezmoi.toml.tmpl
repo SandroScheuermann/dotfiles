@@ -1,5 +1,0 @@
-{{- $machineType := promptChoiceOnce . "machineType" "Machine type" (list "desktop" "notebook") "desktop" -}}
-{{- $desktopSession := promptChoiceOnce . "desktopSession" "Desktop session" (list "hyprland" "i3") "hyprland" -}}
-[data]
-machineType = {{ $machineType | quote }}
-desktopSession = {{ $desktopSession | quote }}
